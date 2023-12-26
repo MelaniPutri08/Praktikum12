@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Gambar</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Galeri Gambar</h1>
+    <div class="form-group">
+      <label for="pilihanGambar">Pilih gambar:</label>
+      <select id="pilihanGambar" class="form-control" onchange="tampilkanGambar()">
+        <option value="" selected disabled>Pilih gambar</option>
+        <option value="Mermaid">Putri duyung</option>
+        <option value="Peri">Peri</option>
+        <!-- Tambahkan lebih banyak opsi jika ingin menambah pilihan gambar lainnya -->
+        <option value="Naga">Naga</option>
+        <option value="Bajaklaut">Bajaklaut</option>
+        <option value="SuleSutisna">Sule</option>
+        <!-- Menambahkan lebih banyak pilihan gambar -->
+      </select>
+    </div>
+    <div class="mt-4">
+      <img id="gambar" src="" alt="Gambar akan ditampilkan di sini" class="img-fluid">
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function tampilkanGambar() {
+      var selectedValue = document.getElementById("pilihanGambar").value;
+      var imageName = "";
+      var imageSrc = "";
+
+      switch (selectedValue) {
+        case "Mermaid":
+          imageName = "mermaid.jpeg"; // Ganti dengan nama file gambar mermaid
+          imageSrc = "mermaid.jpeg"; // Ganti dengan URL/path gambar mermaid
+          break;
+        case "Peri":
+          imageName = "Peri.png"; // Ganti dengan nama file gambar Peri
+          imageSrc = "peri.png"; // Ganti dengan URL/path gambar Peri
+          break;
+        case "Naga":
+          imageName = "naga.jpg"; // Ganti dengan nama file gambar Naga
+          imageSrc = "naga.jpg"; // Ganti dengan URL/path gambar Naga
+          break;
+        case "Bajaklaut":
+          imageName = "bajaklawd.jpg"; // Ganti dengan nama file gambar Bajaklaut
+          imageSrc = "bajaklawd.jpg"; // Ganti dengan URL/path gambar Bajaklaut
+          break;
+        case "suleSutisna":
+          imageName = "sule.jpg"; // Ganti dengan nama file gambar suleSutisna
+          imageSrc = "suleee.jpg"; // Ganti dengan URL/path gambar suleSutisna
+          break;
+        // Tambahkan case lain jika ingin menambah lebih banyak pilihan gambar
+        // Pastikan untuk menyediakan URL/path gambar yang sesuai
+        default:
+          imageName = "Pilih gambar";
+          imageSrc = "";
+      }
+
+      if (imageSrc !== "") {
+        document.getElementById("gambar").src = imageSrc;
+        alert("Nama file gambar: " + imageName);
+      } else {
+        document.getElementById("gambar").src = "";
+        alert("Silakan pilih gambar.");
+      }
+    }
+  </script>
+</body>
+</html>

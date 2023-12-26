@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mata uang asing</title>
+    <style>
+        table,th,td, fieldset {
+            border: 1px solid rgb(8, 5, 5);
+            width: 80%; 
+        }
+    </style>
+    <script>
+        function kurs_() {
+            const kurs = {
+                "Dollar US": 9915,
+                "Dollar Singapore": 13472,
+                "Ringgit Malaysia": 874,
+                "Yen Jepang": 120,
+                "Euro": 15888,
+                "Riyal Arab Saudi": 3592
+            };
+
+            let nilairupiah = document.getElementById("nilaiRupiah").value;
+            let koversiPilihan = document.getElementById("valas").value;
+
+            let nilaiRupiah = nilairupiah*kurs[koversiPilihan];
+
+            let elemenRupiah = document.getElementById("hasilRupiah");
+            elemenRupiah.innerHTML = nilaiRupiah
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            Kurs Rupiah > mata uang asing
+        </legend>
+        <br>
+        <table>
+            <tr>
+                <th>Masukkan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </tr>
+            <tr>
+            <td><input type="number" id="nilaiRupiah"></td>
+            <td>
+             <select id="valas">
+                        <option value="Dollar US">Dollar US</option>
+                        <option value="Dollar Singapore">Dollar Singapore</option>
+                        <option value="Ringgit Malaysia">Ringgit Malaysia</option>
+                        <option value="Yen Jepang">Yen Jepang</option>
+                        <option value="Euro">Euro</option>
+                        <option value="Riyal Arab Saudi">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td><span id="hasilRupiah"></span></td>
+            </tr>
+        </table>
+        <button onclick="kurs_()">Hitung Konversi</button>
+    </fieldset>
+</body>
+
+</html>
